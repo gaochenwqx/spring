@@ -14,6 +14,7 @@ import com.gc.demo.ioc.di.PrintService;
 import com.gc.demo.ioc.pojo.AnnotationBean;
 import com.gc.demo.ioc.pojo.JavaConfigBean;
 import com.gc.demo.ioc.pojo.XmlBean;
+import com.gc.demo.ioc.scope.CountService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -61,11 +62,25 @@ public class DemoApplicationTests {
   }
 
   @Autowired
+  CountService countService;
+
+  @Autowired
+  CountService countService2;
+
+  @Test
+  public void countServiceTest() {
+    System.out.println(countService.count());
+    System.out.println(countService.count());
+    System.out.println(countService2.count());
+
+  }
+
+  @Autowired
   Service service;
 
   @Test
   public void aopTest() {
-    service.work();
+    service.doSomething();
   }
 
 }

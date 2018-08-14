@@ -1,5 +1,6 @@
 package com.gc.demo.aop.demo;
 
+import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,8 +13,8 @@ public class ServiceImpl implements Service {
 
   @Override
   public void work() {
-    doSomething();
-    // ((Service) AopContext.currentProxy()).doSomething();
+    // doSomething();
+    ((Service) AopContext.currentProxy()).doSomething();
   }
 
 }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyAspect {
 
-  @Pointcut("execution(** com.gc.demo.*..doSomething(..)) && within(com.gc.demo.aop.demo.*) && bean(serviceImpl)")
+  @Pointcut("execution(** com.gc.demo.*..*(..)) && within(com.gc.demo.aop.demo.*) && bean(serviceImpl)")
   public void pointcut() {}
 
   @Before("pointcut()")
