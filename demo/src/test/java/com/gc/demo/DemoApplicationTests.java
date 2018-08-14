@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.gc.demo.ioc.annotation.Man;
+import com.gc.demo.aop.demo.Service;
+import com.gc.demo.ioc.annotation.Person;
 import com.gc.demo.ioc.config.Printer;
 import com.gc.demo.ioc.di.PrintService;
 import com.gc.demo.ioc.pojo.AnnotationPojo;
@@ -18,45 +19,53 @@ import com.gc.demo.ioc.pojo.XmlPojo;
 @SpringBootTest
 public class DemoApplicationTests {
 
-    @Autowired
-    AnnotationPojo annotationPojo;
+  @Autowired
+  AnnotationPojo annotationPojo;
 
-    @Autowired
-    ConfigPojo configPojo;
+  @Autowired
+  ConfigPojo configPojo;
 
-    @Autowired
-    XmlPojo xmlPojo;
+  @Autowired
+  XmlPojo xmlPojo;
 
-    @Test
-    public void pogoTest() {
-	annotationPojo.print();
-	configPojo.print();
-	xmlPojo.print();
-    }
+  @Test
+  public void pogoTest() {
+    annotationPojo.print();
+    configPojo.print();
+    xmlPojo.print();
+  }
 
-    @Autowired
-    @Qualifier("printAServiceImpl")
-    PrintService printService;
+  @Autowired
+  @Qualifier("printAServiceImpl")
+  PrintService printService;
 
-    @Test
-    public void diTest() {
-	printService.print();
-    }
+  @Test
+  public void diTest() {
+    printService.print();
+  }
 
-    @Autowired
-    Printer printer;
+  @Autowired
+  Printer printer;
 
-    @Test
-    public void configTest() {
-	printer.print();
-    }
+  @Test
+  public void configTest() {
+    printer.print();
+  }
 
-    @Autowired
-    Man man;
+  @Autowired
+  Person person;
 
-    @Test
-    public void annotationTest() {
-	man.showGun();
-    }
+  @Test
+  public void annotationTest() {
+    person.showGun();
+  }
+
+  @Autowired
+  Service service;
+
+  @Test
+  public void aopTest() {
+    service.work();
+  }
 
 }
