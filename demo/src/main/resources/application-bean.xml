@@ -16,7 +16,7 @@
             http://www.springframework.org/schema/context 
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
             
-       <bean id="xmlPojo" class="com.gc.demo.ioc.pojo.XmlPojo"></bean>
+       <bean id="xmlBean" class="com.gc.demo.ioc.pojo.XmlBean"></bean>
        
        
 </beans>

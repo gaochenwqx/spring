@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanConfiguration {
 
-    @Bean
-    public ConfigPojo configPojo() {
-	return new ConfigPojo();
-    }
+  @Bean
+  public JavaConfigBean javaConfigBean() {
+    return new JavaConfigBean();
+  }
 
 }
